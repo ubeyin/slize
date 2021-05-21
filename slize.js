@@ -245,9 +245,20 @@
           for (var i = 0; i <= _val.length; i++) {
             _val[i].focus(); _val[i].setRangeText(val, _val[i].selectionStart, _val[i].selectionEnd, "end");
           }
-        } catch(e) {
-          console.error("Failed to set range text at cursor!");
-        }
+        } catch(e) {}
+      };
+      this.prototype.gps = function (success, error) {
+        const getPositionErrorMessage = code => {
+          switch (code) {
+            case 1: return 'Permission denied.'; break; case 2: return 'Position unavailable.'; break; case 3: return 'Timeout reached.'; break; default: return 'An unknown error'; break;
+          }
+        }; if ('geolocation' in navigator === false) {
+          console.error(new TypeError('Geolocation is not supported by your browser.'));
+        } return navigator.geolocation.getCurrentPosition(function (position) {
+            return success(position.coords.latitude, position.coords.longitude, position);
+          }, function(e) {
+            return error(getPositionErrorMessage(e.code));
+          });
       };
     }).call(sl);
   if (typeof module === 'object' && typeof module.exports === 'object') {
