@@ -260,7 +260,7 @@
             return error(getPositionErrorMessage(e.code));
           });
       };
-      this.prototype.fillByUrl = function() {
+      this.prototype.fillByUrl = function(name) {
         window.onload = function() {
           function querySt(ji) {
             hu = window.location.search.substring(1); gy = hu.split("&"); for (i = 0; i < gy.length; i++) {
@@ -268,10 +268,22 @@
                 return ft[1];
               }
             }
-          } var fieldName = querySt("fieldName"); if (fieldName == null) {} else {
-            document.getElementById('fillfield').value = fieldName;
+          } var fieldName = querySt(name); if (fieldName == null) {} else {
+            let _val = this.data;
+            var valOf = function (element) {
+              try {
+                return element.value,
+                element.innerHTML;
+              } catch(e) {}
+            };
+            try {
+              _val = document.querySelectorAll(this.data);
+            } catch(e) {}
+            for (var i = 0; i < _val.length; i++) {
+              return valueOf(_val[i], fieldName);
+            }
           }
-        }
+        };
 
       };
     }).call(sl);
