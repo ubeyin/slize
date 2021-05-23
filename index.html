@@ -318,13 +318,6 @@
         c = 0;
       }
     }
-    var cdn = document.querySelectorAll(".cdn");
-    for (var i = 0; i < cdn.length; i++) {
-      cdn[i].onclick = function() {
-        sl(cdn).copy();
-        console.log("Copied");
-      };
-    }
     function copy() {
       sl(document.querySelector(".cdn-x1").innerText).copy();
       console.log("Copied");
@@ -364,7 +357,7 @@
       <p>
         To start using Slize.js directly, first download the slize.js file by clicking the download button at the top of this page. Then add the following script to the head of your HTML document:
       </p>
-      <div class="code cdn">
+      <div class="code cdn" onclick='sl(this.innerText).copy();console.log("Copied");'>
         <pre>&lt;<span style="color: rgb(95 182 211);">script</span> <span style="color: rgb(197 165 197);">src</span>=<span style="color: rgb(141 200 145)">"dist/slize.js"</span>&gt;&lt;/<span style="color: rgb(95 182 211);">script</span>&gt;</pre>
       </div>
 
@@ -385,7 +378,8 @@
       <p>
         For use unique (one) function, use the following snippet. The following snippet is recommended for you:
       </p>
-      <div class="code cdn">
+      <div class="code cdn" onclick='sl(this.innerText).copy();console.log("Copied");' onclick='sl(this.innerText).copy();
+        console.log("Copied");'>
         <pre><span style="color: rgb(95 182 211);">var</span> sl = <span style="color: rgb(197 165 197);">new </span>Slize();<br>sl.go(<span style="color: rgb(197 165 197);">function</span>($){<br><span style="color: darkgrey">&nbsp;&nbsp;// Your code goes here</span><br>});</pre>
       </div>
       <p>
@@ -395,7 +389,7 @@
       <p>
         For use global function, use the following snippet:
       </p>
-      <div class="code cdn">
+      <div class="code cdn" onclick='sl(this.innerText).copy();console.log("Copied");'>
         <pre>sl(...).<span style="color: rgb(197 165 197);">function</span>(...);<br><span style="color: darkgrey">// Examples</span><br>sl(<span style="color: rgb(141 200 145)">"https://www.sololearn.com"</span>).<span style="color: rgb(197 165 197);">share</span>(<span style="color: rgb(141 200 145)">"Sololearn"</span>, <span style="color: rgb(141 200 145)">"Sololearn: Learn codes for free"</span>);</pre>
       </div>
       <p>
