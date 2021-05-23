@@ -319,8 +319,8 @@
       }
     }
 
-    document.forEach((el)=> {
-      sl(".cdn").copy();
+    document.querySelectorAll(".code").forEach((el)=> {
+      sl(el).copy();
       console.log("Copied");
     });
 
