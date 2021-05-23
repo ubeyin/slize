@@ -325,6 +325,10 @@
         console.log("Copied");
       };
     }
+    function copy() {
+      sl(this).copy();
+      console.log("Copied");
+    }
     function dl() {
       sl.go(function($) {
         $("https://cdn.jsdelivr.net/gh/ubeyin/slize/slize.js").fetch(function(val) {
