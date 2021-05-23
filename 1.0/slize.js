@@ -289,9 +289,10 @@
     }).call(sl);
   if (typeof module === 'object' && typeof module.exports === 'object') {
     module.exports = Slize;
+    module.exports = sl;
   } else if (typeof define === 'function' && define.amd) {
     define([], function () {
-      return Slize;
+      return Slize, sl;
     });
   } else {
     window.Slize = Slize; window.sl = sl;
