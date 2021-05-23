@@ -319,14 +319,12 @@
       }
     }
     var cdn = document.querySelectorAll(".cdn");
-    for (var i = 0; i <= cdn.length; i++) {
-      document.querySelectorAll(".cdn")[i].addEventListener("click", copy, false);
+    for (var i = 0; i < cdn.length; i++) {
+      document.querySelectorAll(".cdn")[i].onclick = function copy() {
+        sl().copy();
+        console.log("Copied");
+      };
     }
-    function copy() {
-      sl(this).copy();
-      console.log("Copied");
-    };
-
     function dl() {
       sl.go(function($) {
         $("https://cdn.jsdelivr.net/gh/ubeyin/slize/slize.js").fetch(function(val) {
