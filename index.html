@@ -320,8 +320,10 @@
     }
 
     document.querySelectorAll(".code").forEach((el)=> {
-      sl(el).copy();
-      console.log("Copied");
+      el.onclick = function() {
+        sl(el).copy();
+        console.log("Copied");
+      };
     });
 
     function dl() {
