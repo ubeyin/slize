@@ -326,8 +326,9 @@
       sl(document.querySelector(".cdn-x1").innerText).copy();
       console.log("Copied");
     }
+    var slz = new Slize();
     function dl() {
-      sl.go(function($) {
+      slz.go(function($) {
         $("https://cdn.jsdelivr.net/gh/ubeyin/slize/slize.js").fetch(function(val) {
           $(val).download("slize.js", "text/js");
           console.log("Downloading...");
