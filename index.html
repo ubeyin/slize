@@ -322,8 +322,8 @@
     for (var i = 0; i <= cdn.length; i++) {
       cdn.addEventListener("click", copy, false);
     }
-    function copy(c) {
-      sl(c).copy();
+    function copy() {
+      sl(this).copy();
       console.log("Copied");
     };
 
