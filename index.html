@@ -320,8 +320,8 @@
     }
     var cdn = document.querySelectorAll(".cdn");
     for (var i = 0; i < cdn.length; i++) {
-      document.querySelectorAll(".cdn")[i].onclick = function copy() {
-        sl().copy();
+      cdn[i].onclick = function copy() {
+        sl(cdn).copy();
         console.log("Copied");
       };
     }
