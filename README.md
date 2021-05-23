@@ -3,13 +3,6 @@ Jsdelivr CDN : ```https://cdn.jsdelivr.net/gh/ubeyin/slize/slize.js```
 
 Github CDN: ```https://ubeyin.github.io/slize/slize.js```
 
-# changelogs
-
-Version 1.0.0# 
-Changelog All notable changes to this project will be documented in this file. 
-The format is based on [Slize Changelog](https://keepachangelog.com/en/1.0.0/), and this 
-project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html). 
-
 ## [Released] 
 ## [1.0] - 2021-05-20
 ### Created - [@1.0](https://github.com/ubeyin/1.0/)
