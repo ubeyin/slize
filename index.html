@@ -318,13 +318,13 @@
         c = 0;
       }
     }
-
-    document.querySelectorAll(".cdn").forEach((el)=> {
-      el.onclick = function() {
-        sl(el).copy();
+    var cdn = document.querySelectorAll(".cdn");
+    for (var i = 0; i <= cdn.length; i++) {
+      cdn[i].onclick = function() {
+        sl(cdn[i]).copy();
         console.log("Copied");
       };
-    });
+    }
 
     function dl() {
       sl.go(function($) {
