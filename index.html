@@ -1,0 +1,418 @@
+<!-- Slize.js 1.0 -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Slize.js</title>
+  <script src="https://cdn.jsdelivr.net/gh/ubeyin/slize/slize.js"></script>
+  <style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    *,*:before,*:after {
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+    }
+    a,a:before,a:after {
+      text-decoration: none;
+      color: #fff;
+      cursor: none;
+    }
+    .main {
+      width: 100%;
+      background: #282c34;
+      overflow: hidden;
+    }
+    .navbar {
+      width: 100%;
+      height: 60px;
+      background: rgba(32,35,42,0.96);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+    }
+    .navbar .menu {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .navbar .menu .cm div {
+      width: 17px;
+      height: 1px;
+      background: #fff;
+      border-radius: 0.2rem;
+    }
+    .navbar .menu .cm div:nth-child(2) {
+      margin: 5px 0 5px 0;
+    }
+    .navbar .logo {
+      color: #fff;
+      padding: 0 10px 0 0px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: lighter;
+      font-size: 19px;
+    }
+    .dropdown {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #222;
+      overflow: hidden;
+      height: 0px;
+      transition: 350ms;
+    }
+    .dropdown .item {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+    }
+    .dropdown .item a {
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      cursor: none;
+    }
+    .button {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      right: 0;
+    }
+    .button:active {
+      opacity: 0.6;
+    }
+    .button span {
+      background: firebrick;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 12px;
+      padding: 7px 12px;
+      border-radius: 1.5px;
+      margin-right: 16px;
+      font-family: "Comfortaa";
+    }
+    .button span a {
+      color: #fff;
+      text-decoration: none;
+    }
+    /**/
+    .section {
+      position: relative;
+      margin: 0 auto;
+      padding: 0 15px;
+      height: calc(60vh - 50px);
+      margin-top: 50px;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section-heading {
+      font-size: 40px;
+      font-family: Comfortaa;
+      font-weight: bold;
+      color: crimson;
+      opacity: 0.98;
+      margin-bottom: 10px;
+    }
+
+    .section-paragraph {
+      font-family: Poppins;
+      color: white;
+      font-size: 16px;
+      width: 340px;
+      margin-bottom: 12px;
+      margin-top: 12px;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    .section-bell-icon {
+      margin-bottom: -2px;
+    }
+
+@keyframes bellRotate {
+      0% {
+        transform: rotate(25deg);
+      }
+
+      50% {
+        transform: rotate(-25deg);
+      }
+
+      100% {
+        transform: rotate(25deg);
+      }
+
+    }
+    .section-btn2 {
+      margin-top: 20px;
+    }
+    .section-btn1 {
+      margin-top: 10px;
+    }
+    .section-btn1 {
+      font-size: 15px;
+      background: linear-gradient(135deg, crimson, firebrick);
+      color: #fff;
+      padding: 6.5px 20px;
+      font-family: Poppins;
+      margin-right: 14px;
+      border-radius: 4px;
+      cursor: none;
+      opacity: 0.8;
+      text-align: center;
+      transition: 0.2s;
+    }
+    .section-btn1:active {
+      background-color: #1b1d22;
+      opacity: 1;
+    }
+    .section-btn2 {
+      font-size: 15px;
+      background: linear-gradient(45deg, #20232a, #17191d);
+      color: #cbcdd0;
+      padding: 7px 20px;
+      font-family: Poppins;
+      margin-right: 10px;
+      border-radius: 4px;
+      cursor: none;
+      text-align: center;
+      transition: 0.2s;
+      opacity: 0.8;
+    }
+    .section-btn2:active {
+      background-color: #1b1d22;
+      color: #e6e6e7;
+    }
+    .section-banner {
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      font-size: 200px;
+      transform: rotate(45deg);
+      height: 100px;
+      width: 100px;
+      color: transparent;
+      background: radial-gradient(#282c34, #1c1f24);
+      border-radius: 10px;
+      animation: 5s animate ease-in-out forwards infinite;
+      transition: 0.8s;
+      opacity: 0.6;
+    }
+
+@keyframes animate {
+      0% {
+        bottom: -40px;
+        opacity: 0.6;
+      }
+
+      50% {
+        bottom: 40px;
+        opacity: 0.2;
+      }
+
+      100% {
+        bottom: -40px;
+        opacity: 0.6;
+      }
+    }
+    .article {
+      background: #fff;
+      color: #333;
+      padding: 20px;
+      font-family: "Quicksand";
+    }
+    .code {
+      margin-top: 8px;
+      padding: 12px;
+      font-size: 14px;
+      background: #282c34;
+      color: white;
+      border-radius: 0.1rem;
+      padding-left: 14px;
+      overflow-y: hidden;
+      border-left: 5px solid rgba(255,255,255,0.1);
+    }
+    .code pre {
+      font-family: "Poppins";
+    }
+    copy,.copy {
+      font-size: 13px;
+      background: rgb(95 182 211);
+      color: #fff;
+      max-width: 80px;
+      padding: 4px 20px;
+      font-family: Poppins;
+      margin-top: 10px;
+      border-radius: 0.14rem;
+      cursor: none;
+      text-align: center;
+      border-bottom: 3px solid rgba(0,0,0,0.1);
+      transition: 0.2s;
+    }
+    copy:active,.copy:active {
+      opacity: 0.8;
+    }
+    #doc,#install,#demo,#about {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    #info {
+      width: 100%;
+      background: rgba(32,35,42,0.96);
+      padding: 10px;
+      text-align: center;
+      font-family: Quicksand;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <script type="text/javascript" charset="utf-8">
+    var c = 0;
+    function openMenu() {
+      if (c == 0) {
+        var drop = document.getElementById("drop");
+        var i = document.getElementsByClassName("item");
+        drop.style.height = i.length*60+"px";
+        c = 1;
+      } else {
+        var drop = document.getElementById("drop");
+        drop.style.height = "0";
+        c = 0;
+      }
+    }
+    var sl = new Slize();
+    function copy() {
+      sl.go(function($) {
+        $(".cdn").copy();
+        console.log("Copied");
+      });
+    }
+    function dl() {
+      sl.go(function($) {
+        $("https://cdn.jsdelivr.net/gh/ubeyin/slize/slize.js").fetch(function(val) {
+          $(val).download("slize.js", "text/js");
+          console.log("Downloading...");
+        })
+      });
+    }
+  </script>
+  <div class="main">
+    <div class="section">
+      <div class="section-heading">
+        Slize<span style="font-size: 28px;
+          font-family: Poppins;color: white;text-transform: lowercase;font-weight: 600;letter-spacing: 1px;margin-left: 1px;">.js</span>
+      </div>
+      <div class="section-banner"></div>
+      <div class="section-paragraph">
+        An Javascript library to use the various tools and integration of the website easily.
+      </div>
+      <div class="section-btn">
+        <div class="section-btn2">
+          <a href="#doc">Documentation</a>
+        </div>
+        <div class="section-btn1">
+          Show Demo
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="article">
+    <div id="install">
+      <h2>Installation</h2>
+      <p>
+        You can download the slize.js file by clicking the download button at the top of this page. Or you can insert the following cdn link to src attributes in the script inside the head element of your html page.
+      </p>
+      <div class="code cdn">
+        <pre>&lt;<span style="color: rgb(95 182 211);">script</span> <span style="color: rgb(197 165 197);">src</span>=<span style="color: rgb(141 200 145)">"https://cdn.jsdelivr.net/gh/ubeyin/slize/slize.js"</span>&gt;&lt;/<span style="color: rgb(95 182 211);">script</span>&gt;</pre>
+      </div>
+      <div class="copy" onclick="copy()">
+        Copy
+      </div>
+    </div>
+    <div id="doc">
+      <h2>Documentation</h2>
+      <p>
+        Coming soon ...
+      </p>
+    </div>
+    <div id="demo">
+      <h2>Demo</h2>
+      <p>
+        Coming soon ...
+      </p>
+    </div>
+    <div id="about">
+      <h2>About</h2>
+      <p>
+        Slize.js is an Javascript library to use the various tools and integration of the website easily. It is made by ubeyin.
+      </p>
+      <a class="section-btn1" href="https://github.com/ubeyin/slize.git">
+        View on GitHub
+      </a>
+    </div>
+  </div>
+  <div id="info">
+    <p>
+      Made with <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512" style="fill:crimson"><path d="M256 448a32 32 0 01-18-5.57c-78.59-53.35-112.62-89.93-131.39-112.8-40-48.75-59.15-98.8-58.61-153C48.63 114.52 98.46 64 159.08 64c44.08 0 74.61 24.83 92.39 45.51a6 6 0 009.06 0C278.31 88.81 308.84 64 352.92 64c60.62 0 110.45 50.52 111.08 112.64.54 54.21-18.63 104.26-58.61 153-18.77 22.87-52.8 59.45-131.39 112.8a32 32 0 01-18 5.56z" /></svg> by Ubeyin LLC
+    </p>
+  </div>
+  <div class="navbar">
+    <div class="menu" onclick="openMenu()">
+      <div class="cm">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div class="logo">
+      Slize JS
+    </div>
+    <div class="button">
+      <span>
+        <a onclick="dl()">
+          Download
+        </a>
+      </span>
+    </div>
+  </div>
+  <div id="drop" class="dropdown" onclick='document.getElementById("drop"); drop.style.height = "0";'>
+    <div class="item">
+      <a href="#doc">Documentation</a>
+    </div>
+    <div class="item">
+      <a href="#install">Installation</a>
+    </div>
+    <div class="item">
+      <a href="#demo">Play a demo</a>
+    </div>
+    <div class="item">
+      <a href="#about">About</a>
+    </div>
+    <div class="item">
+      <a href="#info">Info</a>
+    </div>
+  </div>
+</body>
+</html>
