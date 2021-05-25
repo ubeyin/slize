@@ -1,4 +1,9 @@
-/** Slize JS v1.0 * Copyright © by Ubeyin LLC. * Licensed under Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0.txt) **/ (function() {
+/*!
+ * Slize v1.0 (https://ubeyin.github.io/slize)
+ * Copyright 2011-2021 The Slize Authors
+ * Copyright 2011-2021 Ubeyin, LLC.
+ * Licensed under Apache 2.0 (https://github.com/ubeyin/slize/blob/main/LICENSE)
+ */ (function() {
   "use strict"; var Slize; var sl; sl = function (selector) {
     if (! (this instanceof sl)) {
       return new sl(selector);
