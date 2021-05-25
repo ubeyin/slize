@@ -405,6 +405,29 @@
         Here, The sl is used for access slize and all functions.
       </p>
       <div class="hr"></div>
+      <!----- Scope ----->
+      <h3>
+        # Scope
+      </h3>
+      <p>
+        The scope is the binding part between the HTML for view and the JavaScript for control (like angular js).<br>
+      </p>
+      <ul>
+        <li>View, set data in HTML for view.</li>
+        <li>Data, set data from XHR.</li>
+        <li>Control, makes/changes/controls the data with JS.</li>
+      </ul>
+      <div class="code" onclick='sl(this.innerText).copy();console.log("Copied");'>
+        <pre>$(<span style="color: rgb(141 200 145)">"body"</span>).scope({<br>&nbsp;&nbsp;heading: <span style="color: rgb(141 200 145)">"This is a heading text"</span><br>});</pre>
+      </div>
+      <p>
+        In HTML file,
+      </p>
+      <div class="code" onclick='sl(this.innerText).copy();console.log("Copied");'>
+        <pre>&lt;<span style="color: rgb(95 182 211);">body</span>&gt;<br>&nbsp;&nbsp;&lt;<span style="color: rgb(95 182 211);">h1</span>&gt; {{heading}} ! &lt;/<span style="color: rgb(95 182 211);">h1</span>&gt;<br>&lt;/<span style="color: rgb(95 182 211);">body</span>&gt;</pre>
+      </div>
+      <div class="hr"></div>
+      <!------ Slideshow ------>
       <h3>
         # Scope
       </h3>
