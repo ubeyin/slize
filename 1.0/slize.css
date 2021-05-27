@@ -328,6 +328,7 @@ h6 {
 }
 ::selection {
   background: rgba(220,20,60,0.4);
+  color: white;
 }
 .box {
   border-radius: 12px;
