@@ -227,8 +227,8 @@ select:focus::-ms-value {
   color: #495057;
   background-color: #fff;
 }
-/* Responsible */
-.row {
+/*** FLEX ***/
+.row,.grid {
   --gutter-x: 1.5rem;
   --gutter-y: 0;
   display: flex;
@@ -237,7 +237,7 @@ select:focus::-ms-value {
   margin-right: calc(var(--gutter-x)/-2);
   margin-left: calc(var(--gutter-x)/-2)
 }
-.row>* {
+.row>*,.grid>* {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
@@ -245,122 +245,196 @@ select:focus::-ms-value {
   padding-left: calc(var(--gutter-x)/2);
   margin-top: var(--gutter-y)
 }
-.col {
+.grid .col {
   flex: 1 0 0%;
 }
-.row.responsive > * {
-  width: 100%;
-}
-.col .auto {
+.grid .col.auto {
   flex: 0 0 auto;
   width: auto;
 }
-.col-1 {
+.grid .col-1 {
   flex: 0 0 auto;
   width: 8.3333333333%;
 }
-.col-2 {
+.grid .col-2 {
   flex: 0 0 auto;
   width: 16.6666666667%;
 }
-.col-3 {
+.grid .col-3 {
   flex: 0 0 auto;
   width: 25%;
 }
-.col-4 {
+.grid .col-4 {
   flex: 0 0 auto;
   width: 33.3333333333%;
 }
-.col-5 {
+.grid .col-5 {
   flex: 0 0 auto;
   width: 41.6666666667%;
 }
-.col-6 {
+.grid .col-6 {
   flex: 0 0 auto;
   width: 50%;
 }
-.col-7 {
+.grid .col-7 {
   flex: 0 0 auto;
   width: 58.3333333333%;
 }
-.col-8 {
+.grid .col-8 {
   flex: 0 0 auto;
   width: 66.6666666667%;
 }
-.col-9 {
+.grid .col-9 {
   flex: 0 0 auto;
   width: 75%;
 }
-.col-10 {
+.grid .col-10 {
   flex: 0 0 auto;
   width: 83.3333333333%;
 }
-.col-11 {
+.grid .col-11 {
   flex: 0 0 auto;
   width: 91.6666666667%;
 }
-.col-12 {
+.grid .col-12 {
   flex: 0 0 auto;
   width: 100%;
 }
 @media (min-width:576px) {
-  .row.responsive .col {
+  .row .col {
     flex: 1 0 0%
   }
-  .row.responsive .col .auto {
+  .row .col .auto {
     flex: 0 0 auto;
     width: auto;
   }
-  .row.responsive .col-1 {
+  .row .col-1 {
     flex: 0 0 auto;
     width: 8.3333333333%;
   }
-  .row.responsive .col-2 {
+  .row .col-2 {
     flex: 0 0 auto;
     width: 16.6666666667%;
   }
-  .row.responsive .col-3 {
+  .row .col-3 {
     flex: 0 0 auto;
     width: 25%;
   }
-  .row.responsive .col-4 {
+  .row .col-4 {
     flex: 0 0 auto;
     width: 33.3333333333%;
   }
-  .row.responsive .col-5 {
+  .row .col-5 {
     flex: 0 0 auto;
     width: 41.6666666667%;
   }
-  .row.responsive .col-6 {
+  .row .col-6 {
     flex: 0 0 auto;
     width: 50%;
   }
-  .row.responsive .col-7 {
+  .row .col-7 {
     flex: 0 0 auto;
     width: 58.3333333333%;
   }
-  .row.responsive .col-8 {
+  .row .col-8 {
     flex: 0 0 auto;
     width: 66.6666666667%;
   }
-  .row.responsive .col-9 {
+  .row .col-9 {
     flex: 0 0 auto;
     width: 75%;
   }
-  .row.responsive .col-10 {
+  .row .col-10 {
     flex: 0 0 auto;
     width: 83.3333333333%;
   }
-  .row.responsive .col-11 {
+  .row .col-11 {
     flex: 0 0 auto;
     width: 91.6666666667%;
   }
-  .row.responsive .col-12 {
+  .row .col-12 {
     flex: 0 0 auto;
     width: 100%;
   }
 }
-/* UI */
+/*** UI ***/
+/** Daily Tools **/
+.flex {
+  display: flex !important;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+.center {
+  vertical-align: middle !important;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: auto;
+}
+.start {
+  float: left !important;
+}
+.end {
+  float: right !important;
+}
+.none {
+  float: none !important;
+}
+.width {
+  width: 100%;
+}
+.height {
+  height: 100%;
+}
+.border {
+  border: 1px solid #dee2e6!important
+}
+.border-none {
+  border: 0!important;
+}
+.border-top {
+  border-top: 1px solid #dee2e6!important
+}
+.border-right {
+  border-right: 1px solid #dee2e6!important
+}
+.border-bottom {
+  border-bottom: 1px solid #dee2e6!important
+}
+.border-left {
+  border-left: 1px solid #dee2e6!important
+}
+.border.primary {
+  border-color: #0d6efd!important
+}
+.border.secondary {
+  border-color: #6c757d!important
+}
+.border.success {
+  border-color: #198754!important
+}
+.border.info {
+  border-color: #0dcaf0!important
+}
+.border.warning {
+  border-color: #ffc107!important
+}
+.border.danger {
+  border-color: #dc3545!important
+}
+.border.light {
+  border-color: #f8f9fa!important
+}
+.border.dark {
+  border-color: #212529!important
+}
+.border.white {
+  border-color: #fff!important
+}
 /* Theme */
 .primary {
   background-color: var(--primary);
