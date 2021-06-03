@@ -696,9 +696,8 @@ select:focus::-ms-value {
   overflow: hidden;
   outline: 0;
   transition: transform .3s ease-out;
-  margin-left: 50%;
+  margin-left: auto;
   margin-top: 15px;
-  transform: translate(-50%,0%);
 }
 
 .modal.float {
