@@ -1,4 +1,4 @@
-/*! * Slize v1.0 (https://ubeyin.github.io/slize) * Copyright 2021 The Slize Authors * Copyright 2021 Ubeyin, LLC. * Licensed under MIT (https://github.com/ubeyin/slize/blob/main/LICENSE) */ @charset"UTF-8"; @import url(https://fonts.googleapis.com/css?family=Poppins); :root {
+/*! * Slize v1.0 (https://ubeyin.github.io/slize) * Copyright 2021 The Slize Authors * Copyright 2021 Ubeyin, LLC. * Licensed under Apache 2.0 (https://github.com/ubeyin/slize/blob/main/LICENSE) */ @charset"UTF-8"; @import url(https://fonts.googleapis.com/css?family=Poppins); :root {
   --blue: #0d6efd;
   --indigo: #6610f2;
   --purple: #6f42c1;
