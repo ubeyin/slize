@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slize icons</title>
+    <link rel="stylesheet" href="https://ubeyin.github.io/slize/1.0/slize.css">
+    <style>
+        * {
+            font-family: "Poppins", sans-serif;
+        }
+
+        h2 {
+            background-color: var(--red);
+            padding: 15px;
+            color: white;
+        }
+
+        #desc {
+            padding: 23px;
+            padding-bottom: 10px;
+        }
+
+        #icons {
+            display: flex;
+            width: 100%;
+            overflow: scroll;
+        }
+
+        .box {
+            width: 120px;
+            height: 160px;
+            padding: 25px;
+            background-color: var(--light);
+            margin: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    
+        <h2>Slize icons</h2>
+        <div id="desc">
+        <p>
+            Paste this cdn link to your html document:
+            <code>https://ubeyin.github.io/slize/1.0/icon.js</code>
+        <br><br>Then add this snippet to your html document: <br><code>&lt;i&nbsp;&nbsp;&nbsp;&nbsp;data-slize="icon_name"&nbsp;&nbsp;&nbsp;&nbsp;data-slize-setting=' fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" '&gt;&lt;/i&gt;</code>
+        <br><br>
+        You can add extra svg codes in <code>data-slize-setting</code>.<br>
+        Choose on your icons below:
+        </p>
+    </div>
+    <div id="icons"></div>
+    <script src="https://ubeyin.github.io/slize/1.0/icon.js"></script>
+    <script>
+        for (var property in slize) {
+            document.getElementById("icons").innerHTML += '<div class="box"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="slize slize-' + property + '">' + slize[property] + "</svg><br><br><span>" + property + "</span></div>";
+        }
+    </script>
+</body>
+
+</html>
